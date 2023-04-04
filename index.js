@@ -37,23 +37,6 @@ app.get("/", auth, async function (request, response) {
   response.send(assignTask);
 });
 
-app.post("/webcode", async function (request,response) {
-  const data = await request.body;
-  const assigWebCode = await client
-    .db("TaskSubmissionPortal")
-    .collection("Assign WebCode")
-    .insertMany(data);
-  response.send(assigWebCode);
-});
-
-app.get("/webcode", auth, async function (request, response) {
-  const assignTask = await client
-    .db("TaskSubmissionPortal")
-    .collection("Assign WebCode")
-    .find({})
-    .toArray();
-  response.send(assignTask);
-});
 
 app.post("/signupdetails", async function (request, response) {
   const { name, email } = await request.body;
