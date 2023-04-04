@@ -77,8 +77,8 @@ app.post("/signupdetails", async function (request, response) {
     let info = {
       from: "selvamyoor@gmail.com",
       to: email,
-      subject: "Reset the password",
-      text: "Use this code to rest the password " + otp,
+      subject: "Email verification OTP",
+      text: "Welcome to the portal the otp for email verification is " + otp,
     };
     transporter.sendMail(info, (err) => {
       if (err) {
@@ -96,7 +96,7 @@ app.post("/signupdetails", async function (request, response) {
           email: email,
           otp: otp,
         });
-    }, 20000);
+    }, 60000);
 
   }
 });
