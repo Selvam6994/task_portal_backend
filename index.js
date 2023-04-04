@@ -6,7 +6,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { auth } from "../task_portal_backend/Auth/auth.js";
+import { auth } from "./Auth/auth.js";
 
 const MONGO_URL = process.env.MONGO_URL;
 const client = new MongoClient(MONGO_URL);
